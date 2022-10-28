@@ -1,0 +1,137 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "Copyright (C) 2006 Laboratory of Intelligent Systems (LIS), EPFL"
+    "Thanks to jean-christophe.zufferey@epfl.ch"
+  ]
+}
+Viewpoint {
+  orientation -0.0404674108535175 0.9845585351500348 0.17031406143366576 1.017668380089336
+  position -0.8778002127495679 -0.1729090220452008 1.4211628578511197
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF ARENA RectangleArena {
+  translation 4.97323e-08 0.01 0
+  rotation 0 0 1 -1.5708
+  floorSize 0.9 0.9
+  floorTileSize 0.9 0.9
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "C:/Users/sbsub/Documents/e-puck/controllers/e-puck_line_demo/floor13.png"
+      ]
+    }
+    roughness 0.2
+    metalness 0
+  }
+  wallHeight 0.05
+}
+DEF OBSTACLE1 Solid {
+  translation 0.175633 0.0561516 0.025
+  rotation 0 0 1 1.57079
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.1 0.3
+        roughness 0.5
+        metalness 0
+      }
+      geometry DEF BOX1 Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "red box"
+  boundingObject USE BOX1
+}
+DEF OBSTACLE2 Solid {
+  translation -0.21419 0.0871004 0.045
+  rotation 7.53564e-10 -9.58979e-09 1 -2.984755307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.501961 1
+        roughness 0.5
+        metalness 0
+      }
+      geometry DEF BOX2 Box {
+        size 0.08 0.08 0.05
+      }
+    }
+  ]
+  name "pink box"
+  boundingObject USE BOX2
+}
+DEF EPUCK E-puck {
+  translation -0.105704 0.302889 0
+  rotation 0 0 1 -0.07079530717958615
+  controller "e-puck_line_garden"
+  supervisor TRUE
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+DEF APPLE1 Solid {
+  translation -0.002 0.2 0
+  rotation 0 1 0 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+    }
+    Apple {
+      translation 0.06 0 0.05
+    }
+  ]
+  boundingObject USE BOX1
+}
+DEF APPLE2 Solid {
+  translation 0.27 -0.15 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+    }
+    Apple {
+      translation -0.03 0 0.05
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE BOX1
+}
+DEF APPLE3 Solid {
+  translation 0 -0.21 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+    }
+    Apple {
+      translation -0.03 0 0.05
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE BOX1
+}
+DEF APPLE4 Solid {
+  translation -0.19 0.25 0
+  scale 0.5 0.5 0.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+    }
+    Apple {
+      translation -0.03 0 0.05
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE BOX1
+}
